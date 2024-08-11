@@ -15,4 +15,15 @@ app.use(urlencoded({extended:true,limit:"16kb"}))
 app.use(express.static("public"))
 app.use(cookieParser())
 
+
+app.get("/twitter", (req,res) => {
+    res.send("i am sending the response")
+})
+
+
+import router from "./routes/user.router.js";
+
+app.use("/api/v1/users", router)
+
+
 export default app;
